@@ -1,7 +1,18 @@
-package com.ridiss.web;
+package com.ridiss.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
-
+	
+	@Id //PK선언
+	@GeneratedValue //자동 증가
+	private Long id;
+	
+	@Column(nullable=false, length=20) //null 비허용
 	private String userId;
 	private String password;
 	private String name;
